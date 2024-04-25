@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using System.Web;
 using System.Collections.Generic;
+using Newtonsoft.Json;
 
 namespace BuggyAppService.Controllers
 {
@@ -10,13 +11,13 @@ namespace BuggyAppService.Controllers
         public IActionResult Index()
         {
             string timeFromURL = null;
-          //  string timeTakenQuery = Request.Query["time"];
+            //  string timeTakenQuery = Request.Query["time"];
             string timeTakenQuery2 = Request.Path.ToString();
 
 
             if (timeTakenQuery2 != null && timeTakenQuery2.Contains("="))
             {
-                 timeFromURL = timeTakenQuery2.Split('=')[1];
+                timeFromURL = timeTakenQuery2.Split('=')[1];
             }
 
 
@@ -35,4 +36,9 @@ namespace BuggyAppService.Controllers
             return View();
         }
     }
+
+
+
 }
+
+
